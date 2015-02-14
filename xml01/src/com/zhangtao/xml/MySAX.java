@@ -26,21 +26,22 @@ public class MySAX extends DefaultHandler{
 				 System.out.print(""+attributes.getQName(x)+"=\""+attributes.getValue(x)+"=\"");
 			 }
 		 }
-		System.out.println(">");
+		System.out.print(">");
 	}
 
 	@Override
-	public void endElement(String uri, String localName, String qName)
+	public void endElement(String uri, String localName, String name)
 			throws SAXException {
 		System.out.print("</");
-		System.out.print("</");
+		System.out.print(name);
+		System.out.print(">");
 	}
 
 	@Override
 	public void characters(char[] ch, int start, int length)
 			throws SAXException {
 		// TODO Auto-generated method stub
-		super.characters(ch, start, length);
+		System.out.print(new String(ch,start,length));
 	}
 	
 	 
